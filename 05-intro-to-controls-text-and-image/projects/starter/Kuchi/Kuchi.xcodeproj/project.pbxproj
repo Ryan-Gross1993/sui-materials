@@ -17,6 +17,30 @@
 		57578FE924E9D943003465A4 /* jp.json in Resources */ = {isa = PBXBuildFile; fileRef = 57578FAF24E9D943003465A4 /* jp.json */; };
 		57EF341324E89F92004ABEB2 /* KuchiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EF340024E89F91004ABEB2 /* KuchiApp.swift */; };
 		57EF341424E89F92004ABEB2 /* KuchiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EF340024E89F91004ABEB2 /* KuchiApp.swift */; };
+		83BBC1632735C773003EC520 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBC1622735C773003EC520 /* WelcomeView.swift */; };
+		83BBC1642735C773003EC520 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBC1622735C773003EC520 /* WelcomeView.swift */; };
+		83BBC1662735D462003EC520 /* HorizontallyAlignedLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBC1652735D462003EC520 /* HorizontallyAlignedLabelStyle.swift */; };
+		83BBC1672735D462003EC520 /* HorizontallyAlignedLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBC1652735D462003EC520 /* HorizontallyAlignedLabelStyle.swift */; };
+		83BBC1762735D712003EC520 /* WelcomeBackgroundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBC1752735D712003EC520 /* WelcomeBackgroundImage.swift */; };
+		83BBC1772735D712003EC520 /* WelcomeBackgroundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBC1752735D712003EC520 /* WelcomeBackgroundImage.swift */; };
+		83BBC1792735D7F1003EC520 /* LogoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBC1782735D7F1003EC520 /* LogoImage.swift */; };
+		83BBC17A2735D7F1003EC520 /* LogoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBC1782735D7F1003EC520 /* LogoImage.swift */; };
+		83BBC17C2735D7F9003EC520 /* WelcomeMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBC17B2735D7F9003EC520 /* WelcomeMessageView.swift */; };
+		83BBC17D2735D7F9003EC520 /* WelcomeMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBC17B2735D7F9003EC520 /* WelcomeMessageView.swift */; };
+		83BBC17F2735D9AC003EC520 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBC17E2735D9AC003EC520 /* RegisterView.swift */; };
+		83BBC1802735D9AC003EC520 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBC17E2735D9AC003EC520 /* RegisterView.swift */; };
+		83BBC1822735DCEA003EC520 /* KuchiTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBC1812735DCEA003EC520 /* KuchiTextStyle.swift */; };
+		83BBC1832735DCEA003EC520 /* KuchiTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBC1812735DCEA003EC520 /* KuchiTextStyle.swift */; };
+		83BBC1852735DFD6003EC520 /* BorderedViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBC1842735DFD6003EC520 /* BorderedViewModifier.swift */; };
+		83BBC1862735DFD6003EC520 /* BorderedViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBC1842735DFD6003EC520 /* BorderedViewModifier.swift */; };
+		83BBC18B2735E7E6003EC520 /* KeyboardFollower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBC18A2735E7E6003EC520 /* KeyboardFollower.swift */; };
+		83BBC18C2735E7E6003EC520 /* KeyboardFollower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBC18A2735E7E6003EC520 /* KeyboardFollower.swift */; };
+		83BBC1902735E9C7003EC520 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBC18D2735E9C7003EC520 /* Settings.swift */; };
+		83BBC1912735E9C7003EC520 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBC18D2735E9C7003EC520 /* Settings.swift */; };
+		83BBC1922735E9C7003EC520 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBC18E2735E9C7003EC520 /* Profile.swift */; };
+		83BBC1932735E9C7003EC520 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBC18E2735E9C7003EC520 /* Profile.swift */; };
+		83BBC1942735E9C7003EC520 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBC18F2735E9C7003EC520 /* UserManager.swift */; };
+		83BBC1952735E9C7003EC520 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BBC18F2735E9C7003EC520 /* UserManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +54,18 @@
 		57EF340F24E89F92004ABEB2 /* Kuchi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kuchi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57EF341124E89F92004ABEB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57EF341224E89F92004ABEB2 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		83BBC1622735C773003EC520 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		83BBC1652735D462003EC520 /* HorizontallyAlignedLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontallyAlignedLabelStyle.swift; sourceTree = "<group>"; };
+		83BBC1752735D712003EC520 /* WelcomeBackgroundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeBackgroundImage.swift; sourceTree = "<group>"; };
+		83BBC1782735D7F1003EC520 /* LogoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoImage.swift; sourceTree = "<group>"; };
+		83BBC17B2735D7F9003EC520 /* WelcomeMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeMessageView.swift; sourceTree = "<group>"; };
+		83BBC17E2735D9AC003EC520 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		83BBC1812735DCEA003EC520 /* KuchiTextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KuchiTextStyle.swift; sourceTree = "<group>"; };
+		83BBC1842735DFD6003EC520 /* BorderedViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedViewModifier.swift; sourceTree = "<group>"; };
+		83BBC18A2735E7E6003EC520 /* KeyboardFollower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyboardFollower.swift; path = "../../../../../../06-controls-and-user-input/projects/starter/Kuchi/iOS/Utils/KeyboardFollower.swift"; sourceTree = "<group>"; };
+		83BBC18D2735E9C7003EC520 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = "../../../../../../06-controls-and-user-input/projects/starter/Kuchi/Shared/Profile/Settings.swift"; sourceTree = "<group>"; };
+		83BBC18E2735E9C7003EC520 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Profile.swift; path = "../../../../../../06-controls-and-user-input/projects/starter/Kuchi/Shared/Profile/Profile.swift"; sourceTree = "<group>"; };
+		83BBC18F2735E9C7003EC520 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserManager.swift; path = "../../../../../../06-controls-and-user-input/projects/starter/Kuchi/Shared/Profile/UserManager.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +86,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57578F9024E9D943003465A4 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				57578F9224E9D943003465A4 /* Components */,
+				83BBC1622735C773003EC520 /* WelcomeView.swift */,
+				83BBC1652735D462003EC520 /* HorizontallyAlignedLabelStyle.swift */,
+				83BBC17E2735D9AC003EC520 /* RegisterView.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		57578F9224E9D943003465A4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				83BBC1812735DCEA003EC520 /* KuchiTextStyle.swift */,
+				83BBC1752735D712003EC520 /* WelcomeBackgroundImage.swift */,
+				83BBC1782735D7F1003EC520 /* LogoImage.swift */,
+				83BBC17B2735D7F9003EC520 /* WelcomeMessageView.swift */,
+				83BBC1842735DFD6003EC520 /* BorderedViewModifier.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		57578FA924E9D943003465A4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +127,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		57B3CA712536560300888D62 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				83BBC18A2735E7E6003EC520 /* KeyboardFollower.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		57EF33FA24E89F91004ABEB2 = {
 			isa = PBXGroup;
 			children = (
@@ -81,9 +148,11 @@
 		57EF33FF24E89F91004ABEB2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				83BBC1682735D67D003EC520 /* Profile */,
 				57578FA724E9D943003465A4 /* HomeView.swift */,
 				57EF340024E89F91004ABEB2 /* KuchiApp.swift */,
 				57578FA924E9D943003465A4 /* Resources */,
+				57578F9024E9D943003465A4 /* Welcome */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -100,6 +169,7 @@
 		57EF340924E89F92004ABEB2 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				57B3CA712536560300888D62 /* Utils */,
 				57EF340A24E89F92004ABEB2 /* Info.plist */,
 			);
 			path = iOS;
@@ -112,6 +182,16 @@
 				57EF341224E89F92004ABEB2 /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		83BBC1682735D67D003EC520 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				83BBC18E2735E9C7003EC520 /* Profile.swift */,
+				83BBC18D2735E9C7003EC520 /* Settings.swift */,
+				83BBC18F2735E9C7003EC520 /* UserManager.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +296,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				57EF341324E89F92004ABEB2 /* KuchiApp.swift in Sources */,
+				83BBC1792735D7F1003EC520 /* LogoImage.swift in Sources */,
+				83BBC1942735E9C7003EC520 /* UserManager.swift in Sources */,
+				83BBC18B2735E7E6003EC520 /* KeyboardFollower.swift in Sources */,
+				83BBC1922735E9C7003EC520 /* Profile.swift in Sources */,
+				83BBC17C2735D7F9003EC520 /* WelcomeMessageView.swift in Sources */,
+				83BBC1762735D712003EC520 /* WelcomeBackgroundImage.swift in Sources */,
+				83BBC1822735DCEA003EC520 /* KuchiTextStyle.swift in Sources */,
+				83BBC1902735E9C7003EC520 /* Settings.swift in Sources */,
+				83BBC1632735C773003EC520 /* WelcomeView.swift in Sources */,
+				83BBC1852735DFD6003EC520 /* BorderedViewModifier.swift in Sources */,
+				83BBC17F2735D9AC003EC520 /* RegisterView.swift in Sources */,
+				83BBC1662735D462003EC520 /* HorizontallyAlignedLabelStyle.swift in Sources */,
 				57578FDE24E9D943003465A4 /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,6 +317,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				57EF341424E89F92004ABEB2 /* KuchiApp.swift in Sources */,
+				83BBC17A2735D7F1003EC520 /* LogoImage.swift in Sources */,
+				83BBC1952735E9C7003EC520 /* UserManager.swift in Sources */,
+				83BBC18C2735E7E6003EC520 /* KeyboardFollower.swift in Sources */,
+				83BBC1932735E9C7003EC520 /* Profile.swift in Sources */,
+				83BBC17D2735D7F9003EC520 /* WelcomeMessageView.swift in Sources */,
+				83BBC1772735D712003EC520 /* WelcomeBackgroundImage.swift in Sources */,
+				83BBC1832735DCEA003EC520 /* KuchiTextStyle.swift in Sources */,
+				83BBC1912735E9C7003EC520 /* Settings.swift in Sources */,
+				83BBC1642735C773003EC520 /* WelcomeView.swift in Sources */,
+				83BBC1862735DFD6003EC520 /* BorderedViewModifier.swift in Sources */,
+				83BBC1802735D9AC003EC520 /* RegisterView.swift in Sources */,
+				83BBC1672735D462003EC520 /* HorizontallyAlignedLabelStyle.swift in Sources */,
 				57578FDF24E9D943003465A4 /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,7 +455,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -372,7 +476,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -401,7 +505,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.Kuchi;
 				PRODUCT_NAME = Kuchi;
 				SDKROOT = macosx;
@@ -424,7 +528,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.Kuchi;
 				PRODUCT_NAME = Kuchi;
 				SDKROOT = macosx;

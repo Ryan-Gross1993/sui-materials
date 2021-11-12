@@ -1,4 +1,4 @@
-/// Copyright (c) 2021 Razeware LLC
+/// Copyright (c) 2020 Razeware LLC
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -33,21 +33,39 @@
 import SwiftUI
 
 struct CongratulationsView: View {
-  let avatarSize: CGFloat = 120
-  let userName: String
-
-  init(userName: String) {
-    self.userName = userName
-  }
-  
-  var body: some View {
-    EmptyView()
-  }
+	@ObservedObject var challengesViewModel = ChallengesViewModel()
+	let avatarSize: CGFloat = 120
+	let userName: String
+	
+	init(userName: String) {
+		self.userName = userName
+	}
+	
+	var body: some View {
+		VStack {
+			// Needed, else everything is pushed to the top
+			Spacer()
+			Text("Congratulations!")
+				.font(.title)
+				.foregroundColor(.gray)
+			AvatarView(userName)
+			Text("You're awesome")
+				.fontWeight(.bold)
+				.foregroundColor(.gray)
+			Spacer()
+			Button(action: {
+				self.challengesViewModel.restart()
+			}, label: {
+				Text("Play Again")
+			})
+				.padding(.top)
+		}
+	}
 }
 
 struct CongratulationsView_Previews: PreviewProvider {
-  static var previews: some View {
-    CongratulationsView(userName: "Johnny Swift")
-      .environmentObject(ChallengesViewModel())
-  }
+	static var previews: some View {
+		CongratulationsView(userName: "Johnny Swift")
+			.environmentObject(ChallengesViewModel())
+	}
 }

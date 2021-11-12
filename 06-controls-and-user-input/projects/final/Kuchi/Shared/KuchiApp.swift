@@ -1,4 +1,4 @@
-/// Copyright (c) 2021 Razeware LLC
+/// Copyright (c) 2020 Razeware LLC
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -39,10 +39,10 @@ struct KuchiApp: App {
   init() {
     userManager.load()
   }
-  
+
   var body: some Scene {
     WindowGroup {
-      RegisterView()
+      RegisterView(keyboardHandler: KeyboardFollower())
         .environmentObject(userManager)
     }
   }
@@ -50,6 +50,7 @@ struct KuchiApp: App {
 
 struct KuchiApp_Previews: PreviewProvider {
   static var previews: some View {
-    RegisterView()
+    RegisterView(keyboardHandler: KeyboardFollower())
+		  .environmentObject(UserManager())
   }
 }

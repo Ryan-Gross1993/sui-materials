@@ -1,4 +1,4 @@
-/// Copyright (c) 2021 Razeware LLC
+/// Copyright (c) 2020 Razeware LLC
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -33,14 +33,66 @@
 import SwiftUI
 
 struct ContentView: View {
-  var body: some View {
-    Text("Hello, world!")
-      .padding()
-  }
+	@State var game = Game()
+	@State var guess: RGB
+	@State var showScore = false
+	
+	var body: some View {
+		VStack {
+			ColorCircle(rgb: game.target)
+			if showScore {
+				Text(game.target.intString())
+					.padding()
+			} else {
+				Text("R: ??? B: ??? G: ???")
+					.padding()
+			}
+			ColorCircle(rgb: guess)
+
+			Color(rgbStruct: guess)
+			Text(guess.intString())
+				.padding()
+			ColorSlider(value: $guess.red, trackColor: .red)
+			ColorSlider(value: $guess.blue, trackColor: .blue)
+			ColorSlider(value: $guess.green, trackColor: .green)
+			Button("Hit Me!") {
+				showScore = true
+				game.check(guess: guess)
+			}
+			.alert(isPresented: $showScore) {
+				Alert(title: Text("Your Score"), message: Text(String(game.scoreRound)), dismissButton: .default(Text("OK")) {
+					game.startNewRound()
+					guess = RGB()
+				})
+			}
+		}
+	}
 }
 
 struct ContentView_Previews: PreviewProvider {
-  static var previews: some View {
-    ContentView()
-  }
+	static var previews: some View {
+		ContentView(guess: RGB())
+	}
+}
+
+struct ColorSlider: View {
+	@Binding var value: Double
+	var trackColor: Color
+	var body: some View {
+		HStack {
+			Text("0")
+			Slider(value: $value)
+				.accentColor(trackColor)
+			Text("255")
+		}
+		.padding(.horizontal)
+	}
+}
+
+struct ColorCircle: View {
+	let rgb: RGB
+	var body: some View {
+		Circle()
+			.fill(Color(rgbStruct: rgb))
+	}
 }

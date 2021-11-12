@@ -1,4 +1,4 @@
-/// Copyright (c) 2021 Razeware LLC
+/// Copyright (c) 2020 Razeware LLC
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -33,14 +33,78 @@
 import SwiftUI
 
 struct ChallengeView: View {
-  var body: some View {
-    Text("Hello World!")
-  }
-}
-
-
-struct ChallengeView_Previews: PreviewProvider {
-  static var previews: some View {
-    return ChallengeView()
-  }
+	@State var showAnswers = false
+	
+	let challengeTest: ChallengeTest
+	
+	var body: some View {
+		//		Text("A great and warm welcome to Kuchi")
+		//		  .background(Color.red)
+		//		  .frame(width: 100, height: 50, alignment: .center)
+		//		  .minimumScaleFactor(0.5)
+		//		  .background(Color.yellow)
+		//
+		//		Image("welcome-background")
+		//			.resizable()
+		//			.background(Color.red)
+		//			.frame(width: 100, height: 50, alignment: .center)
+		//			.background(Color.yellow)
+		
+		// Stacks process views from highest to lowest
+		// Have to set spacing explicitly if you want 0!
+		//		HStack(spacing: 0) {
+		////		HStack() {
+		//			Text("A great and warm welcome to Kuchi!")
+		//				// last element process
+		//				.layoutPriority(-1)
+		//				.background(Color.red)
+		//			Text("A great and warm welcome to Kuchi!")
+		//				.layoutPriority(1)
+		//				.background(Color.red)
+		//			Text("A great and warm welcome to Kuchi!")
+		//				.background(Color.red)
+		//		}
+		//		.background(Color.yellow)
+		
+		
+		//		HStack() {
+		//		HStack(alignment: .firstTextBaseline) {
+		////		HStack(alignment: .lastTextBaseline) {
+		//			Text("Welcome to Kuchi").font(.caption)
+		//			Text("Welcome to Kuchi").font(.title)
+		//			Button(action: {}, label: { Text("OK").font(.body)})
+		//		}
+		VStack {
+			Button(action: {
+				self.showAnswers.toggle()
+			}) {
+				QuestionView(question: challengeTest.challenge.question)
+					.frame(height: 300)
+			}
+			
+			if showAnswers {
+				Divider()
+				
+				ChoicesView(challengeTest: challengeTest)
+					.frame(height: 300)
+					.padding()
+			}
+		}
+	}
+	
+	
+	struct ChallengeView_Previews: PreviewProvider {
+		static let challengeTest = ChallengeTest(
+			challenge: Challenge(
+				question: "おねがい　します",
+				pronunciation: "Onegai shimasu",
+				answer: "Please"
+			),
+			answers: ["Thank you", "Hello", "Please"]
+		)
+		
+		static var previews: some View {
+			return ChallengeView(challengeTest: challengeTest)
+		}
+	}
 }

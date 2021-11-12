@@ -1,4 +1,4 @@
-/// Copyright (c) 2021 Razeware LLC
+/// Copyright (c) 2020 Razeware LLC
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -34,15 +34,25 @@ import SwiftUI
 
 @main
 struct KuchiApp: App {
-  var body: some Scene {
-    WindowGroup {
-      EmptyView()
-    }
-  }
+	let userManager = UserManager()
+	
+	init() {
+		userManager.load()
+	}
+	
+	var body: some Scene {
+		WindowGroup {
+			RegisterView(keyboardHandler: KeyboardFollower())
+				.environmentObject(userManager)
+			// Change initial view
+			//      WelcomeView()
+		}
+	}
 }
 
 struct KuchiApp_Previews: PreviewProvider {
-  static var previews: some View {
-    EmptyView()
-  }
+	static var previews: some View {
+		RegisterView(keyboardHandler: KeyboardFollower())
+			.environmentObject(UserManager())
+	}
 }
