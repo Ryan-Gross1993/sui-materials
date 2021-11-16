@@ -42,6 +42,8 @@ struct WelcomeView: View {
   var body: some View {
     if showPractice {
 		PracticeView(numberOfAnswered: .constant(challengesViewModel.numberOfAnswered), challengeTest: $challengesViewModel.currentChallenge, userName: $userManager.profile.name)
+			.environment(\.questionsPerSession, challengesViewModel.numberOfQuestions)
+//			.environment(\.verticalSizeClass, .compact)
 //      PracticeView(
 //        challengeTest: $challengesViewModel.currentChallenge,
 //        userName: $userManager.profile.name

@@ -35,30 +35,52 @@ import SwiftUI
 struct ChallengeView: View {
 	let challengeTest: ChallengeTest
 	
+	@Environment(\.questionsPerSession) var questionsPerSession
+	@Environment(\.verticalSizeClass) var verticalSizeClass
 	@Binding var numberOfAnswered: Int
 	@State var showAnswers = false
 	
+	@ViewBuilder
 	var body: some View {
-		VStack {
-			Button(action: {
-				showAnswers.toggle()
-			}) {
-				QuestionView(question: challengeTest.challenge.question)
-					.frame(height: 300)
+		if verticalSizeClass == .compact {
+			VStack {
+				HStack {
+					Button(action: {
+						showAnswers.toggle()
+					}) {
+						QuestionView(question: challengeTest.challenge.question)
+							.frame(height: 300)
+					}
+					if showAnswers {
+						Divider()
+						ChoicesView(challengeTest: challengeTest)
+							.frame(height: 300)
+							.padding()
+					}
+				}
+				ScoreView(numberOfQuestions: questionsPerSession, numberOfAnswered: $numberOfAnswered)
 			}
-			
-			ScoreView(numberOfQuestions: 5, numberOfAnswered: $numberOfAnswered)
-			
-			if showAnswers {
-				Divider()
-				ChoicesView(challengeTest: challengeTest)
-					.frame(height: 300)
-					.padding()
+		} else {
+			VStack {
+				Button(action: {
+					showAnswers.toggle()
+				}) {
+					QuestionView(question: challengeTest.challenge.question)
+						.frame(height: 300)
+				}
+				
+				ScoreView(numberOfQuestions: questionsPerSession, numberOfAnswered: $numberOfAnswered)
+				
+				if showAnswers {
+					Divider()
+					ChoicesView(challengeTest: challengeTest)
+						.frame(height: 300)
+						.padding()
+				}
 			}
 		}
 	}
 }
-
 
 struct ChallengeView_Previews: PreviewProvider {
 	@State static var numberOfAnswered: Int = 0
@@ -73,6 +95,10 @@ struct ChallengeView_Previews: PreviewProvider {
 	)
 	
 	static var previews: some View {
-		return ChallengeView(challengeTest: challengeTest, numberOfAnswered: $numberOfAnswered)
+		//		return ChallengeView(challengeTest: challengeTest, numberOfAnswered: $numberOfAnswered)
+		ChallengeView(challengeTest: challengeTest, numberOfAnswered: $numberOfAnswered)
+		
+		ChallengeView(challengeTest: challengeTest, numberOfAnswered: $numberOfAnswered)
+			.previewInterfaceOrientation(.landscapeLeft)
 	}
 }
