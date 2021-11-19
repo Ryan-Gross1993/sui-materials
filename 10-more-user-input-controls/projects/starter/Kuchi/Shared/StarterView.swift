@@ -49,5 +49,6 @@ struct StarterView_Previews: PreviewProvider {
   static var previews: some View {
     StarterView()
       .environmentObject(UserManager())
+	  .environmentObject(ChallengesViewModel())
   }
 }
