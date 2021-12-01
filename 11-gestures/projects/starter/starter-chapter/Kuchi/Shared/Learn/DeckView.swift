@@ -32,17 +32,62 @@
 
 import SwiftUI
 
+typealias CardDrag = (_ card: FlashCard, _ direction: DiscardedDirection) -> Void
+
+enum DiscardedDirection {
+	case left, right
+}
+
 struct DeckView: View {
-    var body: some View {
+	@AppStorage("cardBackgroundColor") var cardBackgroundColorInt: Int = 0xFF0000FF
+	@ObservedObject var deck: FlashDeck
+	
+	let onMemorized: () -> Void
+	
+	init(deck: FlashDeck, onMemorized: @escaping () -> Void) {
+		self.deck = deck
+		self.onMemorized = onMemorized
+	}
+	
+	var body: some View {
 		ZStack {
-			CardView()
-			CardView()
+			//			CardView()
+			//			CardView()
+			
+			// Dynamically creating card views
+			ForEach(deck.cards.filter{ $0.isActive }) { card in
+				getCardView(for: card)
+			}
 		}
-    }
+	}
+	
+	func getCardView(for card: FlashCard) -> CardView {
+		let activeCards = deck.cards.filter({ $0.isActive })
+		
+		if let lastCard = activeCards.last {
+			if lastCard == card {
+				return createCardView(for: card)
+			}
+		}
+		
+		let view = createCardView(for: card)
+		return view
+	}
+	
+	func createCardView(for card: FlashCard) -> CardView {
+		return CardView(card, cardColor: Binding(
+			get: { Color(rgba: cardBackgroundColorInt)},
+			set: { newValue in cardBackgroundColorInt = newValue.asRgba }
+		), onDrag: { card, direction in
+			if direction == .left {
+				onMemorized()
+			}
+		})
+	}
 }
 
 struct DeckView_Previews: PreviewProvider {
-    static var previews: some View {
-        DeckView()
-    }
+	static var previews: some View {
+		DeckView(deck: FlashDeck(from: ChallengesViewModel.challenges), onMemorized: {})
+	}
 }

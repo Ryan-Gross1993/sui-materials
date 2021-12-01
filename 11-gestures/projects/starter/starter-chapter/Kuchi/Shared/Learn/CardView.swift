@@ -33,31 +33,92 @@
 import SwiftUI
 
 struct CardView: View {
+	@GestureState var isLongPressed = false
+	@State var revealed = false
+	@State var offset: CGSize = .zero
+	
+	@Binding var cardColor: Color
+	let flashCard: FlashCard
+	
+	let dragged: CardDrag
+	
+	init(_ card: FlashCard, cardColor: Binding<Color>, onDrag dragged: @escaping CardDrag = {_,_ in }) {
+		self.flashCard = card
+		_cardColor = cardColor
+		self.dragged = dragged
+	}
+	
     var body: some View {
-		ZStack {
+		let drag = DragGesture()
+		
+			.onChanged { offset = $0.translation }
+			.onEnded {
+				if $0.translation.width < -100 {
+					offset = .init(width: -1000, height: 0)
+					dragged(flashCard, .left)
+				} else if $0.translation.width > 100 {
+					offset = .init(width: 1000, height: 0)
+					dragged(flashCard, .right)
+				} else {
+					offset = .zero
+				}
+			}
+		
+		let longPress = LongPressGesture()
+			.updating($isLongPressed) { value, state, transition in
+				state = state
+			}
+			.simultaneously(with: drag)
+		
+		// need to return as your adding variable in body
+		return ZStack {
 			Rectangle()
-				.fill(.red)
+				.fill(cardColor)
 				.frame(width: 320, height: 210)
 			.cornerRadius(12)
 			VStack {
 				Spacer()
-				Text("Apple")
+				Text(flashCard.card.question)
 					.font(.largeTitle)
 					.foregroundColor(.white)
-				Text("Omena")
-					.font(.caption)
+				
+				if revealed {
+					Text(flashCard.card.answer)
+						.font(.caption)
 					.foregroundColor(.white)
+				}
 				Spacer()
 			}
 		}
 		.shadow(radius: 8)
 		.frame(width: 320, height: 210)
-		.animation(.spring(), value: 0)
+		.animation(.spring(), value: offset)
+		.offset(offset)
+		.gesture(longPress)
+		// Used to make the view 'Pop out' when user long presses
+		.scaleEffect(isLongPressed ? 1.1 : 1)
+		.animation(.easeInOut(duration: 0.3), value: isLongPressed)
+//		.gesture(TapGesture()
+//					.onEnded {
+//			withAnimation(.easeIn, {
+//				revealed = !revealed
+//			})
+//		})
+		
+		.simultaneousGesture(TapGesture()
+					.onEnded {
+			withAnimation(.easeIn, {
+				revealed = !revealed
+			})
+		})
     }
 }
 
 struct CardView_Previews: PreviewProvider {
+	@State static var cardColor = Color.red
+	
     static var previews: some View {
-        CardView()
+		let card = FlashCard(card: Challenge(question: "", pronunciation: "", answer: ""))
+        CardView(card, cardColor: $cardColor)
     }
 }

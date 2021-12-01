@@ -33,7 +33,7 @@
 import Combine
 import Foundation
 
-class FlashDeck {
+class FlashDeck: ObservableObject {
 	// @Published allows subscribers of the model to receive notifications of updates
 	@Published var cards: [FlashCard]
 	
